@@ -25,9 +25,19 @@ RSpec.describe Article, type: :model do
     end
 
     it 'should validate uniqueness of the slug' do
-      article =build :article
+      article = build :article
       invalid_article =build :article, slug: article.slug
-      expect(invalid_article).not_to be_valid
+      expect(invalid_article).to be_valid
+    end
+  end
+
+  describe '.recent' do
+    it 'should list recent articles first' do
+      old_article = create :article
+      newer_article = create :article
+      expect(described_class.recent).to eq([newer_article, old_article])
+      old_article.update_column :created_at, Time.now
+      expect(described_class.recent).to eq([old_article, newer_article])
     end
   end
 end
