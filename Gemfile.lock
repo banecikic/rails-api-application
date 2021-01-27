@@ -119,6 +119,7 @@ GEM
     octokit (4.20.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (4.3.7)
       nio4r (~> 2.0)
@@ -188,7 +189,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
@@ -209,12 +209,12 @@ DEPENDENCIES
   kaminari
   listen (~> 3.2)
   octokit (~> 4.0)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   rspec-rails
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
